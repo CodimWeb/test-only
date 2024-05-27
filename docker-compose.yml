@@ -21,6 +21,8 @@ services:
       dockerfile: _docker/app/Dockerfile
     volumes:
     - ./:/var/www
+#    - for custom php.ini
+    - ./_docker/app/conf.d/:/usr/local/etc/php
     depends_on:
       - db
     container_name: php
